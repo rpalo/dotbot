@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "dotty/version"
+require "dotbot/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "dotty"
-  spec.version       = Dotty::VERSION
+  spec.name          = "dotbot"
+  spec.version       = Dotbot::VERSION
   spec.authors       = ["Ryan Palo"]
   spec.email         = ["ryan@thepalos.com"]
 
   spec.summary       = "A cute lil' light-weight-ish dotfile manager."
   spec.description   = File.read("README.md")
-  spec.homepage      = "https://github.com/rpalo/dotty"
+  spec.homepage      = "https://github.com/rpalo/dotbot"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

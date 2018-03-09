@@ -1,40 +1,40 @@
 require "thor"
 require "yaml"
 
-require "dotty/config"
-require "dotty"
+require "dotbot/config"
+require "dotbot"
 
-module Dotty
+module Dotbot
   # CLI for Dotty
   class CLI < Thor
     def self.start(args)
       @@config = get_config
       super
-    rescue DottyError => err
+    rescue DotbotError => err
       exit(1)
     end
 
     def self.get_config
-      dotfile = File.join(ENV["HOME"], ".dotty")
+      dotfile = File.join(ENV["HOME"], ".dotbot")
       if File.exist?(dotfile)
         contents = YAML.load_from_file(dotfile)
         Config.new(contents["dir"])
-      elsif ENV["DOTTY_DIR"]
-        Config.new(ENV["DOTTY_DIR"])
+      elsif ENV["DOTBOT_DIR"]
+        Config.new(ENV["DOTBOT_DIR"])
       else
         raise NoConfigError.new
       end
     end
 
-    desc "track FILE", "Add FILE to Dotty's repo"
+    desc "track FILE", "Add FILE to Dotbot's repo"
     option :git, type: :boolean
     def track(filepath)
-      Dotty::track(filepath, @@config, options[:git])
+      Dotbot::track(filepath, @@config, options[:git])
     end
 
-    desc "update", "Update's Dotty's repo"
+    desc "update", "Update's Dotbot's repo"
     def update
-      Dotty::update(@@config)
+      Dotbot::update(@@config)
     end
   end
 end

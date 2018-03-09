@@ -1,16 +1,38 @@
-# Dotty: A Cute Lil' Dotfiles Manager
+# Dotbot: A Cute Lil' Dotfiles Manager
 
 I made a simple little dotfiles manager because I got tired of creating symlinks all the time.
 
 ## Installation
 
-You can install `dotty` via the `gem` command:
+You can install `dotbot` via the `gem` command:
 
-    $ gem install dotty
+    $ gem install dotbot
+
+Once you have it installed, either create a `~/.dotbot` file (YAML) with the following contents.
+
+```
+dir: ~/.dotfiles  # or whatever your preferred location is
+```
+
+Optionally, instead of a .dotbot file, you can use environment variables, each of the pattern DOTBOT_<var>.  For instance, you could execute some commands by saying
+
+    $ DOTBOT_DIR=~/shnargleflorp dotbot update
+
+More commands and options to come later.
 
 ## Usage
 
-TODO: Write usage instructions here
+### Track a New File
+
+    $ dotbot track <filename> [--git]
+
+This command adds the file to your dotfiles repo and creates a symlink in the file's old location so it will stay updated.  Use the `--git` flag to also add/commit/push to your remote dotfiles repo.
+
+### Update Your Dotfiles
+
+    $ dotbot update
+
+This command is pretty much just a `git pull` in your dotfiles repo.
 
 ## Development
 
@@ -28,4 +50,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Dotbot::Mini project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/dotbot-mini/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Dotbot::Mini project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/rpalo/dotbot/blob/master/CODE_OF_CONDUCT.md).

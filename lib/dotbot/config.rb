@@ -1,4 +1,4 @@
 # A config object
-module Dotty
+module Dotbot
   Config = Struct.new(:dir)
 end

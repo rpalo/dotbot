@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-require "dotty/cli"
-
-Dotty::CLI.start(ARGV)

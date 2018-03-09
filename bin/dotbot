@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "dotbot/cli"
+
+Dotbot::CLI.start(ARGV)
