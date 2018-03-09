@@ -1,1 +1,4 @@
-/Users/ryanpalo/Documents/Programming/Ruby/dotbot-mini/dotty
+#!/usr/bin/env ruby
+require_relative "../src/cli"
+
+Dotty::CLI.start(ARGV)
