@@ -1,6 +1,6 @@
 require "fileutils"
 
-require_relative "errors"
+require "dotty/errors"
 
 # Dotfile tracker
 module Dotty

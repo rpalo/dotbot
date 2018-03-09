@@ -1,8 +1,8 @@
 require "thor"
 require "yaml"
 
-require_relative "config"
-require_relative "dotty"
+require "dotty/config"
+require "dotty"
 
 module Dotty
   # CLI for Dotty

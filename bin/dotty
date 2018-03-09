@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require_relative "../src/cli"
+require "dotty/cli"
 
 Dotty::CLI.start(ARGV)

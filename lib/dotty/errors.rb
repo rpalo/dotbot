@@ -1,3 +1,4 @@
+# All the custom errors for this dotfile manager
 module Dotty
   class DottyError < StandardError; 
     def initialize(message=nil)
