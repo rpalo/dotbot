@@ -17,7 +17,7 @@ module Dotbot
     def self.get_config
       dotfile = File.join(ENV["HOME"], ".dotbot")
       if File.exist?(dotfile)
-        contents = YAML.load_from_file(dotfile)
+        contents = YAML.load_file(dotfile)
         Config.new(contents["dir"])
       elsif ENV["DOTBOT_DIR"]
         Config.new(ENV["DOTBOT_DIR"])
